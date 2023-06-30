@@ -1,0 +1,83 @@
+/*나브바*/
+* {
+    background-color: #0f0c2f;
+    color: #ccbeb7;
+    text-decoration-line: none;
+}
+.nav_bar {
+    display: flex;
+    justify-content: flex-end;
+}
+.nav_button {
+    display: flex;
+    flex-direction: row;
+}
+.login_button {
+    margin: 10px;
+}
+.join_member_button {
+    margin: 10px;
+}
+.my_page_button {
+    margin: 10px;
+}
+
+/*양쪽 여백 조정*/
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+/*페이지 이름 위치*/
+.title {
+    display: flex;
+    justify-content: center;
+}
+/*박스 안*/
+.writtenbox_1 {
+    border: solid 1px;
+    border-radius: 3%;
+    height: 80%;
+    margin: 5%;
+}
+.element_1 {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.written_1 {
+    margin: 10px;
+}
+.box_1 {
+    border: solid 1px;
+    border-radius: 4%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 50%;
+}
+
+.writtenbox_new {
+    border: solid 1px;
+    border-radius: 3%;
+    height: 80%;
+    margin: 5%;
+}
+.element_new {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.written_new {
+    margin: 10px;
+}
+h4 {
+    margin-bottom: 1px;
+}
+.box_new {
+    border: solid 1px;
+    border-radius: 4%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 50%;
+}

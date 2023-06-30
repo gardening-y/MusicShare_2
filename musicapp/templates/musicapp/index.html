@@ -26,5 +26,68 @@
   <a href="{% url 'login:signup' %}"><p>로그인 페이지</p></a>
 
 
-</body>
+        <script>
+            /*여기 있는 버튼을 작성페이지에 있는 버튼이랑 연결해야함*/
+            const button = document.querySelector(".btn button");
+
+            button.addEventListener("click", () => {
+                const writtenbox = document.createElement("div");
+                writtenbox.className = "writtenbox_new";
+
+                const element = document.createElement("div");
+                element.className = "element_new";
+
+                const subject = document.createElement("div");
+                subject.className = "subject_new";
+                subject.textContent = "제목";
+
+                const box = document.createElement("div");
+                box.className = "box_new";
+
+                const written = document.createElement("div");
+                written.className = "written_new";
+
+                const songInfo = document.createElement("div");
+                songInfo.className = "song_info_new";
+
+                const song = document.createElement("div");
+                song.className = "song_new";
+                song.textContent = "노래";
+
+                const singer = document.createElement("div");
+                singer.className = "singer_new";
+                singer.textContent = "가수이름";
+
+                songInfo.appendChild(song);
+                songInfo.appendChild(singer);
+
+                box.appendChild(written);
+
+                element.appendChild(subject);
+                element.appendChild(box);
+                element.appendChild(songInfo);
+
+                writtenbox.appendChild(element);
+
+                document.querySelector(".writtenbox").appendChild(writtenbox);
+            });
+        </script>
+        {% for writing in writings %}
+        <hr />
+        {% if writing.image %}
+        <img src="{{writing.image.url}}" />
+        {% else %}
+        <img src="http://via.placeholder.com/50x50" alt="" />
+        {% endif %} {{writing.title}}
+        -{{writing.content|truncatechars:20}}-{{writing.author}}-{{writing.datetime|
+        date:"Y년 m월 d일"}}
+        <button type="button">
+            <a href="{% url 'delete' writing.id %}">삭제</a>
+        </button>
+        {% endfor %}
+
+        <a href="{% url 'create' %}"><p>생성</p></a>
+        <a href="{% url 'mypage' request.user %}"><p>마이페이지</p></a>
+        <a href="{% url 'login:signup' %}"><p>로그인 페이지</p></a>
+    </body>
 </html>

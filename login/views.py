@@ -1,26 +1,33 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import SignUpForm
 
 from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
-def signup_view(request):
-  
-  #GET 요청 시 HTML 응답
+def signup(request):
   if request.method == 'GET':
     form = SignUpForm
     context = {'form' : form}
     return render(request, 'login/signup.html', context)
   
-  # POST 요청 시 데이터 확인 후 회원 생성
   else:
     form = SignUpForm(request.POST)
     
     if form.is_valid():
-      # 회원가입 처리
       instance = form.save()
-      return redirect('login:signup')
+      return redirect('index')
     else:
-      # redirect 처리
       return redirect('login:signup')
+    
+def login(request):
+  #GET, POST 분리
+  if request.method == 'GET':
+    # 로그인 HTML 응답
+    pass
+  
+  else:
+    pass
+    # 데이터 유효성 검사
+    # 비즈니스 로직 처리
+    # 응답

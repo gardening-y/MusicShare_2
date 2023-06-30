@@ -1,0 +1,80 @@
+* {
+  background-color: rgba(15, 12, 47, 1);
+}
+/* 음악아이콘 */
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: rgba(204, 190, 183, 1);
+  position: relative;
+}
+
+.circle img {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(204, 190, 183, 1);
+  top: 20px;
+  position: absolute;
+}
+
+/* id & password box */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  height: 360px;
+  margin: 0 auto;
+  /* padding: 20px; */
+  border: solid rgba(204, 190, 183, 1) 3px;
+  border-radius: 10%;
+}
+
+.email,
+.password {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  color: rgba(204, 190, 183, 1);
+  padding: 25px 0;
+  width: 350px;
+  height: 40px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  color: rgba(204, 190, 183, 1);
+  padding: 40px 0;
+  width: 350px;
+  height: 30px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 300px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  border: solid rgba(204, 190, 183, 1) 3px;
+}
+
+input[type="submit"] {
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  border: solid rgba(204, 190, 183, 1) 3px;
+}

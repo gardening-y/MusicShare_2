@@ -23,6 +23,7 @@ def login(request):
     pass
   
   else:
+
     form = AuthenticationForm(request.POST)
     if form.is_valid():
       pass

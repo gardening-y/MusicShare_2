@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <title>Document</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
     -{{writing.content|truncatechars:20}}-{{writing.author}}-{{writing.datetime| date:"Y년 m월 d일"}}
     <button type="button"><a href="{% url 'delete' writing.id %}">삭제</a></button>
   {% endfor %}
-
+  <p>연습ㄴ</p>
   <a href="{% url 'create' %}"><p>생성</p></a>
   <a href="{% url 'mypage' request.user %}"><p>마이페이지</p></a>
   <a href="{% url 'login:signup' %}"><p>로그인 페이지</p></a>

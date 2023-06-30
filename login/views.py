@@ -13,15 +13,14 @@ def signup_view(request):
     context = {'form' : form}
     return render(request, 'login/signup.html', context)
   
-  #POST 요청 시 데이터 확인 후 회원 생성
-  # else:
-  #   form = SignUpForm(request.POST)
+  # POST 요청 시 데이터 확인 후 회원 생성
+  else:
+    form = SignUpForm(request.POST)
     
-  #   if form.is_valid():
-  #     # 회원가입 처리
-  #     instance = form.save()
-  #     return redirect('login:signup')
-  #   else:
-  #     # redirect 처리
-  #     return redirect('login:signup')
-return render(request, 'login/signup.html', context)
+    if form.is_valid():
+      # 회원가입 처리
+      instance = form.save()
+      return redirect('login:signup')
+    else:
+      # redirect 처리
+      return redirect('login:signup')

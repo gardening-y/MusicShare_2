@@ -1,0 +1,73 @@
+.circle {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 100%;
+    background-color: rgb(201, 191, 181);
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    text-align: center;
+    color: rgb(201, 191, 181);
+    font-size: 20pt;
+}
+.music_icon {
+    width: 50%;
+    height: 60%;
+}
+.field {
+    width: 50%;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.goto_login {
+    text-align: center;
+    color: rgb(201, 191, 181);
+}
+* {
+    background-color: rgb(20, 14, 54);
+}
+
+label {
+    color: rgb(201, 191, 181);
+}
+.box1 {
+    width: 50%;
+    height: 30px;
+}
+.chk {
+    color: rgb(201, 191, 181);
+}
+label {
+    font-weight: bold;
+    font-size: 15pt;
+}
+span {
+    color: rgb(201, 191, 181);
+}
+.box2 {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+    margin-right: 50px;
+}
+.submit {
+    width: 300px;
+    height: 50px;
+    font-size: 15pt;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgb(201, 191, 181);
+    color: rgb(20, 14, 54);
+    border-radius: 15px;
+    font-weight: bold;
+}
+a {
+    color: yellow;
+}

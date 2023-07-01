@@ -1,50 +1,108 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MusicShare</title>
-</head>
-<body>
-  <h1>회원가입 화면</h1>
-  <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div>
-      {{ form.username.label_tag }}
-      {{ form.username }}
-      {% if form.username.errors %}
-        <ul class="errorlist">
-          {% for error in form.username.errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-    <div>
-      {{ form.password1.label_tag }}
-      {{ form.password1 }}
-      {% if form.password1.errors %}
-        <ul class="errorlist">
-          {% for error in form.password1.errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-    <div>
-      {{ form.password2.label_tag }}
-      {{ form.password2 }}
-      {% if form.password2.errors %}
-        <ul class="errorlist">
-          {% for error in form.password2.errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </div>
-    <div>
-      <input type="submit">
-    </div>
-  </form>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MusicShare</title>
+        <link rel="stylesheet" href="{% static 'css/join_member_page.css' %}" />
+    </head>
+    <body>
+        <form
+            action="{% url 'login' %}"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            {% csrf_token %}
+            <div>
+                {{ form.username.label_tag }} {{ form.username }} {% if
+                form.username.errors %}
+                <ul class="errorlist">
+                    {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password1.label_tag }} {{ form.password1 }} {% if
+                form.password1.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password1.errors %}
+                    <li><b>{{ error }}</b></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password2.label_tag }} {{ form.password2 }} {% if
+                form.password2.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password2.errors %}
+                    <li><b>{{ error }}</b></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div class="circle">
+                <img
+                    src="{% static 'media/music_icon.png' %}"
+                    class="music_icon"
+                />
+            </div>
+            <p class="main"><b>회원 가입</b></p>
+            <fieldset class="field">
+                <div class="box2">
+                    <br />
+                    <label>이름</label>
+                    <p><input type="text" class="box1" /></p>
+                    <label>아이디</label>
+                    <p>
+                        <input
+                            type="text"
+                            class="box1"
+                            maxlength="10"
+                            placeholder="10자 이내로 입력하세요"
+                        />
+                    </p>
+                    <label for="password1">비밀번호</label>
+                    <p>
+                        <input
+                            type="password"
+                            class="box1"
+                            placeholder="특수문자를 포함하세요"
+                            name="password1"
+                        />
+                    </p>
+                    <label for="password2">비밀번호 확인</label>
+                    <p>
+                        <input type="password" class="box1" name="password2" />
+                    </p>
+                    <label>이메일</label>
+                    <p>
+                        <input type="email" class="box1" list="com" />
+                        <datalist id="com">
+                            <option>@naver.com</option>
+                            <option>@daum.com</option>
+                            <option>@lion.org</option>
+                        </datalist>
+                    </p>
+
+                    <input type="checkbox" class="chk" />
+                    <span>(필수) 서비스 이용 약관에 동의합니다.</span>
+                    <br />
+                    <input type="checkbox" class="chk" />
+                    <span>(선택) 마케팅 활용 및 광고 수신에 동의합니다.</span>
+                </div>
+                <br />
+            </fieldset>
+
+            <input type="submit" value="가입하기" class="submit" />
+            <p class="goto_login">
+                이미 계정이 있나요?
+                <b><a href="{% url 'login' %}">로그인</a></b>
+            </p>
+        </form>
+    </body>
 </html>

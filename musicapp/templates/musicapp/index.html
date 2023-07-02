@@ -16,7 +16,7 @@
                 <div class="nav_button">
                     <div class="new_create" style="margin: 10px">
                         {% if request.user.is_authenticated %}
-                        <a href="{% url 'create' %}"><p>생성</p></a>
+                        <a href="{% url 'create' %}"><p>노래 추천하기</p></a>
                         {% endif %}
                     </div>
                     {% if request.user.is_authenticated %}
@@ -76,10 +76,10 @@
 
                             <div class="song_info_1">
                                 <div class="song_1">
-                                    <h4>{{writing.music_title}}</h4>
+                                    <h4>노래 제목 : {{writing.music_title}}</h4>
                                 </div>
                                 <div class="singer_1">
-                                    {{writing.music_singer}}
+                                    가수 : {{writing.music_singer}}
                                 </div>
                             </div>
                         </div>

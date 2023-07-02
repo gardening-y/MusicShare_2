@@ -9,8 +9,6 @@
         <title>Document</title>
     </head>
     <body>
-        <hr />
-
         <nav>
             <div class="nav_bar">
                 <div class="nav_button">
@@ -20,9 +18,11 @@
                         {% endif %}
                     </div>
                     {% if request.user.is_authenticated %}
-                    
+
                     <div class="mypage_btn" style="margin: 10px">
-                        <a href="{% url 'mypage' request.user %}"><p>마이페이지</p></a>
+                        <a href="{% url 'mypage' request.user %}"
+                            ><p>마이페이지</p></a
+                        >
                     </div>
                     <div class="logout_btn" style="margin: 10px">
                         <a href="{% url 'login:logout' %}"><p>로그아웃</p></a>
@@ -45,9 +45,13 @@
             <div class="main_show">
                 <div
                     class="who_author"
-                    style="font-size: larger; font-weight: bolder"
+                    style="
+                        font-size: larger;
+                        font-weight: bolder;
+                        margin-top: 20px;
+                    "
                 >
-                작성자 : {{writing.author}}
+                    작성자 : {{writing.author}}
                 </div>
                 <div
                     class="img_"
@@ -58,7 +62,11 @@
                     "
                 >
                     {% if writing.image %}
-                    <img  width=200px height=200px src="{{writing.image.url}}" />
+                    <img
+                        width="200px"
+                        height="200px"
+                        src="{{writing.image.url}}"
+                    />
                     {% else %}
                     <img src="http://via.placeholder.com/200x200" alt="" />
                     {% endif %}

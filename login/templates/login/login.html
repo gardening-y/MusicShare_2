@@ -1,40 +1,65 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로그인 화면</title>
-</head>
-<body>
-  <h1>로그인 화면</h1>
-  <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div>
-      {{ form.username.label_tag }}
-      {{ form.username }}
-      {% if form.username.errors %}
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 화면</title>
+    <link
+      rel="stylesheet"
+      href="{% static '/login/static/css/login_page.css' %}"
+    />
+    <link rel="stylesheet" href="/login/static/css/login_page.css" />
+  </head>
+  <body>
+    <!-- 음악아이콘 -->
+    <div class="icon">
+      <div class="circle">
+        <img src="/login/templates/login/music-note.png" alt="" />
+      </div>
+    </div>
+
+    <!-- id & password box -->
+    <div class="box">
+      <div class="email">
+        <input type="email" name="email" placeholder="ID" />
+      </div>
+      <div class="password">
+        <input type="password" name="password" placeholder="Password" />
+      </div>
+      <div class="submit">
+        <input type="submit" name="submit" value="Login" />
+      </div>
+    </div>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div>
+        {{ form.username.label_tag }} {{ form.username }} {% if
+        form.username.errors %}
         <ul class="errorlist">
           {% for error in form.username.errors %}
-            <li>{{ error }}</li>
+          <li>{{ error }}</li>
           {% endfor %}
         </ul>
-      {% endif %}
-    </div>
-    <div>
-      {{ form.password.label_tag }}
-      {{ form.password }}
-      {% if form.password.errors %}
+        {% endif %}
+      </div>
+      <div>
+        {{ form.password.label_tag }} {{ form.password }} {% if
+        form.password.errors %}
         <ul class="errorlist">
           {% for error in form.password.errors %}
-            <li>{{ error }}</li>
+          <li>{{ error }}</li>
           {% endfor %}
         </ul>
-      {% endif %}
+        {% endif %}
+      </div>
+      <div>
+        <input type="submit" value="로그인" />
+      </div>
+    </form>
+    <div class="signup">
+      <a href="{% url 'login:signup' %}">회원가입</a>
     </div>
-    <div>
-      <input type="submit" value="로그인">
-    </div>
-  </form>
-  <a href="{% url 'login:signup' %}">회원가입</a>
-</body>
+  </body>
 </html>

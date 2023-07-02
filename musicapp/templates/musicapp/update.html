@@ -42,8 +42,8 @@
                 <input type="text" name="music_title"  value="{{writing.music_title}}" class="song_title" placeholder="노래명" />
                 <input type="text" class="singer" value="{{writing.music_singer}}" placeholder="가수명" />
                 {% if writing.image %}
-                <p>현재 : <a href="{{ writing.image.url }}">{{writing.image.name}}</a></p>
-                <p> 변경 : <input type="file" name="image"></p>
+                <p style="font-size:15px">현재 : <a href="{{ writing.image.url }}">{{writing.image.name}}</a></p>
+                <p style="font-size:15px"> 변경 : <input type="file" name="image"></p>
               {% else %}
                 <input type="file" name="image">
               {% endif %}

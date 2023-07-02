@@ -10,13 +10,15 @@
     </head>
     <body>
         <hr />
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'create' %}"><p>생성</p></a>
-        {% endif %}
 
         <nav>
             <div class="nav_bar">
                 <div class="nav_button">
+                    <div class="new_create" style="margin: 10px">
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'create' %}"><p>생성</p></a>
+                        {% endif %}
+                    </div>
                     {% if request.user.is_authenticated %}
                     <div class="mypage_btn" style="margin: 10px">
                         <a href="{% url 'mypage' request.user %}"

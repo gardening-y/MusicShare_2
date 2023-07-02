@@ -11,11 +11,12 @@
         <form
             action="{% url 'login:signup' %}"
             method="POST"
-            enctype="multipart/form-data">
+            enctype="multipart/form-data"
+        >
             {% csrf_token %}
             <div class="circle">
                 <img
-                src="{% static 'media/music-note.png' %}"
+                    src="{% static 'media/music-note.png' %}"
                     class="music_icon"
                 />
             </div>
@@ -24,22 +25,20 @@
                 <div class="box2">
                     <br />
                     <label>{{ form.username.label_tag }}</label>
-                    <p>
-                      {{ form.username }}
-                    </p>                    
+                    <p>{{ form.username }}</p>
 
-                    <label for="password1">{{ form.password1.label_tag }}</label>
-                    <p>
-                      {{ form.password1 }}
-                    </p>                    
+                    <label for="password1"
+                        >{{ form.password1.label_tag }}</label
+                    >
+                    <p>{{ form.password1 }}</p>
 
-                    <label for="password2">{{ form.password2.label_tag }}</label>
-                    <p>
-                      {{ form.password2 }}
-                    </p>                    
-  
+                    <label for="password2"
+                        >{{ form.password2.label_tag }}</label
+                    >
+                    <p>{{ form.password2 }}</p>
+
                     {% if error %}
-                    <p>{{error}}</p>
+                    <p style="color: rgb(201, 191, 181)">{{error}}</p>
                     {% endif %}
                 </div>
             </fieldset>

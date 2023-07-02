@@ -1,27 +1,10 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/writing_page.css' %}" />
-    <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-        crossorigin="anonymous"
-    />
   <title>Document</title>
-  <style>
-    #song_list div {
-        color: white;
-    }
-
-    #song_list hr {
-        width: 100%;
-    }
-</style>
 </head>
 <body>
   <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
@@ -33,44 +16,5 @@
     <input type="text" name="music_singer" value="">
     <input type="submit">
   </form>
-
-  <nav id="menu">
-    <i class="fas fa-arrow-left"></i>
-    <p>글작성</p>
-</nav>
-<div id="write">
-    <input type="text" class="title" placeholder="제목을 입력하세요" />
-    <div id="write_con">
-        <input type="text" class="content" placeholder="내용을 입력하세요" />
-        <div id="song">
-            <div id="write_song">
-                <input type="text" class="song_title" placeholder="노래명" />
-                <input type="text" class="singer" placeholder="가수명" />
-                <input type="button" class="add_song" value="&#xf067" onclick="add_song_singer()">
-            </div>
-            <div id="song_list"></div>
-        </div>
-    </div>     
-</div>
-<input type="button" class="add_write" value="작성완료">
-<script>
-    function add_song_singer() {
-        var songTitle = document.querySelector(".song_title").value;
-        var singer = document.querySelector(".singer").value;
-        var songList = document.getElementById("song_list");
-
-        var songEntry = document.createElement("div");
-        songEntry.textContent = songTitle + " - " + singer;
-        songEntry.style.padding = "1rem 0 0 1rem";
-        songList.appendChild(songEntry);
-
-        var hrElement = document.createElement("hr");
-        hrElement.style.width = "314px";
-        songList.appendChild(hrElement);
-
-        songList.style.overflow = "auto";
-        songList.style.maxHeight = "317px";
-    }
-</script>
 </body>
 </html>

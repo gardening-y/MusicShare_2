@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login_page</title>
-    <link rel="stylesheet" href="{% static 'css/login_page.css' %}" />
-  </head>
-  <body>
-    <!-- 음악아이콘 -->
-    <div class="icon">
-      <div class="circle">
-        <img src="/music-note.png" alt="" />
-      </div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>login_page</title>
+        <link rel="stylesheet" href="{% static 'css/login_page.css' %}" />
+    </head>
+    <body>
+        <!-- 음악아이콘 -->
+        <div class="icon">
+            <div class="circle">
+                <img src="/music-note.png" alt="" />
+            </div>
+        </div>
+        <p style="text-align: center"><b>로그인 페이지</b></p>
+        <!-- id & password box -->
+        <div class="box">
+            <div class="email">
+                <input type="email" name="email" placeholder="ID" />
+            </div>
+            <div class="password">
+                <input type="password" name="password" placeholder="Password" />
+            </div>
+            <div class="submit">
+                <a href="main_page.html">
+                    <input type="submit" name="submit" value="Login"
+                /></a>
+            </div>
+        </div>
 
-    <!-- id & password box -->
-    <div class="box">
-      <div class="email">
-        <input type="email" name="email" placeholder="ID" />
-      </div>
-      <div class="password">
-        <input type="password" name="password" placeholder="Password" />
-      </div>
-      <div class="submit">
-        <a href="main_page.html">
-          <input type="submit" name="submit" value="Login"
-        /></a>
-      </div>
-    </div>
-
-    <script></script>
-  </body>
+        <script></script>
+    </body>
 </html>

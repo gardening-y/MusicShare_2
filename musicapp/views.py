@@ -31,6 +31,8 @@ def update(request, id):
   else:
     writing.title=request.POST.get('title')
     writing.content=request.POST.get('content')
+    writing.music_title=request.POST.get('music_title')
+    writing.music_singer=request.POST.get('music_singer')
     new_image=request.FILES.get('image')
     if new_image:
       writing.image.delete()

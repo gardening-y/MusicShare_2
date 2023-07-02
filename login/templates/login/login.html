@@ -26,8 +26,7 @@
           </ul>
           {% endif %}
         </div>
-      </div>
-      <div class="password">
+        <div class="password">
         {{ form.password.label_tag }} {{ form.password }} 
         {% if form.password.errors %}
         <ul class="errorlist">
@@ -37,12 +36,14 @@
         </ul>
         {% endif %}
       </div>
-      <div>
+<div class="putput" style="margin-left:40% ;">
+      <div style="margin: 10px;">
         <input type="submit" value="Login" />
       </div>
-      <div class="signup">
+      <div class="signup" style="margin: 10px;">
         <a href="{% url 'login:signup' %}">회원가입</a>
       </div>
+    </div>
     </form>
   </body>
 </html>

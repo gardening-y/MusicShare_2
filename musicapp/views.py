@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Music
+from django import forms
+from django.http import HttpResponse
 
 
 def index(request):
@@ -48,3 +50,15 @@ def mypage(request, author):
   except Music.DoesNotExist:
     writings = []
   return render(request, 'musicapp/mypage.html', {'writings': writings})
+
+
+
+def signup(request):
+    if request.method == "POST":
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        res_data={}
+        
+        if password1 != password2:
+            res_data['error'] = '비밀번호가 다릅니다.'
+        return render(request, 'signup.html', res_data)

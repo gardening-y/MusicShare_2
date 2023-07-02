@@ -8,4 +8,5 @@ urlpatterns = [
   path('update/<int:id>', update, name='update'),
   path('delete/<int:id>', delete, name='delete'),
   path('mypage/<str:author>', mypage, name='mypage'),
+  
 ]

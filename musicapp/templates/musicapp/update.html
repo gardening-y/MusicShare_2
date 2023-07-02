@@ -24,14 +24,12 @@
 </style>
 </head>
 <body>
+  <nav id="menu">
+    <a href="{% url 'mypage' request.user %}"><i class="fas fa-arrow-left"></i></a>
+    <p>글작성</p>
   <form action="{% url 'update' writing.pk %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
-
-
-  <nav id="menu">
-    <i class="fas fa-arrow-left"></i>
-    <p>글작성</p>
 </nav>
 <div id="write">
     <input type="text"  name="title" class="title" value="{{writing.title}}" placeholder="제목을 입력하세요" />

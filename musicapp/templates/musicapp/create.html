@@ -24,15 +24,14 @@
 </style>
 </head>
 <body>
+    <nav id="menu">
+        <a href="{% url 'index' %}"><i class="fas fa-arrow-left"></i></a>
+        <p>글작성</p>
+    </nav>
   <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
 
-
-  <nav id="menu">
-    <i class="fas fa-arrow-left"></i>
-    <p>글작성</p>
-</nav>
 <div id="write">
     <input type="text"  name="title" class="title" placeholder="제목을 입력하세요" />
     <div id="write_con">
@@ -40,9 +39,9 @@
         <div id="song">
             <div id="write_song">
                 <input type="text" name="music_title" class="song_title" placeholder="노래명" />
-                <input type="text" class="singer" placeholder="가수명" />
+                <input type="text" name="music_singer" class="singer" placeholder="가수명" />
                 <input type="file" name="image" accept="image/*">
-                <input type="button" name="music_singer" class="add_song" value="&#xf067" onclick="add_song_singer()">
+                <input type="button" class="add_song" value="&#xf067" onclick="add_song_singer()">
             </div>
             <div id="song_list"></div>
         </div>

@@ -22,7 +22,7 @@
                     <li>{{ error }}</li>
                     {% endfor %}
                 </ul>
-                {% if form.username.errors %}
+                {% endif %}
             </div>
             <div>
                 {{ form.password1.label_tag }} {{ form.password1 }} {% if
@@ -42,6 +42,7 @@
                     <li><b>{{ error }}</b></li>
                     {% endfor %}
                 </ul>
+                {% endif %}
             </div>
 
             <div class="circle">

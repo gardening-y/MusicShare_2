@@ -42,40 +42,45 @@
         <main>
             <div class="main_show">
                 <div class="title"><h1>음악추천</h1></div>
-                        {{writing.author}}
-                        <div class="img_" style="margin-top: 10px; margin-bottom: 0px; text-align: center;">
-                        {% if writing.image %}
-                        <img src="{{writing.image.url}}" />
-                        {% else %}
-                        <img src="http://via.placeholder.com/50x50" alt="" />
-                        {% endif %}</div>
-                    <div class="write_box">
-                        <div class="writtenbox_1">
-                            <div class="element_1">
-                                <div class="subject_1">
-                                    <h3>{{writing.title}}</h3>
-                                </div>
+                {{writing.author}}
+                <div
+                    class="img_"
+                    style="
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        text-align: center;
+                    "
+                >
+                    {% if writing.image %}
+                    <img src="{{writing.image.url}}" />
+                    {% else %}
+                    <img src="http://via.placeholder.com/50x50" alt="" />
+                    {% endif %}
+                </div>
+                <div class="write_box">
+                    <div class="writtenbox_1">
+                        <div class="element_1">
+                            <div class="subject_1">
+                                <h3>{{writing.title}}</h3>
+                            </div>
 
-                                <div class="box_1">
-                                    <div class="written_1">
-                                        {{writing.content}}
-                                    </div>
-                                </div>
+                            <div class="box_1">
+                                <div class="written_1">{{writing.content}}</div>
+                            </div>
 
-                                <div class="song_info_1">
-                                    <div class="song_1">
-                                        <h4>{{writing.music_title}}</h4>
-                                    </div>
-                                    <div class="singer_1">
-                                        {{writing.music_singer}}
-                                    </div>
+                            <div class="song_info_1">
+                                <div class="song_1">
+                                    <h4>{{writing.music_title}}</h4>
+                                </div>
+                                <div class="singer_1">
+                                    {{writing.music_singer}}
                                 </div>
                             </div>
-                            {{writing.datetime|date:"Y년 m월 d일"}}
                         </div>
-
-                        <div class="writtenbox"></div>
+                        {{writing.datetime|date:"Y년 m월 d일"}}
                     </div>
+
+                    <div class="writtenbox"></div>
                 </div>
             </div>
         </main>

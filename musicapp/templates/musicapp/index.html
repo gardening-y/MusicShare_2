@@ -20,10 +20,9 @@
                         {% endif %}
                     </div>
                     {% if request.user.is_authenticated %}
+                    
                     <div class="mypage_btn" style="margin: 10px">
-                        <a href="{% url 'mypage' request.user %}"
-                            ><p>마이페이지</p></a
-                        >
+                        <a href="{% url 'mypage' request.user %}"><p>마이페이지</p></a>
                     </div>
                     <div class="logout_btn" style="margin: 10px">
                         <a href="{% url 'login:logout' %}"><p>로그아웃</p></a>
@@ -39,16 +38,16 @@
                 </div>
             </div>
         </nav>
+        <div class="title"><h1>음악추천</h1></div>
         {% for writing in writings %}
         <hr />
         <main>
             <div class="main_show">
-                <div class="title"><h1>음악추천</h1></div>
                 <div
                     class="who_author"
                     style="font-size: larger; font-weight: bolder"
                 >
-                    {{writing.author}}
+                작성자 : {{writing.author}}
                 </div>
                 <div
                     class="img_"
@@ -59,9 +58,9 @@
                     "
                 >
                     {% if writing.image %}
-                    <img src="{{writing.image.url}}" />
+                    <img  width=200px height=200px src="{{writing.image.url}}" />
                     {% else %}
-                    <img src="http://via.placeholder.com/50x50" alt="" />
+                    <img src="http://via.placeholder.com/200x200" alt="" />
                     {% endif %}
                 </div>
                 <div class="write_box">

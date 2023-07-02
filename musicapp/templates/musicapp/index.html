@@ -42,7 +42,12 @@
         <main>
             <div class="main_show">
                 <div class="title"><h1>음악추천</h1></div>
-                {{writing.author}}
+                <div
+                    class="who_author"
+                    style="font-size: larger; font-weight: bolder"
+                >
+                    {{writing.author}}
+                </div>
                 <div
                     class="img_"
                     style="
@@ -77,7 +82,16 @@
                                 </div>
                             </div>
                         </div>
-                        {{writing.datetime|date:"Y년 m월 d일"}}
+                        <div
+                            class="date_"
+                            style="
+                                margin-top: 20px;
+                                margin-left: 18%;
+                                margin-bottom: 5px;
+                            "
+                        >
+                            {{writing.datetime|date:"Y년 m월 d일"}}
+                        </div>
                     </div>
 
                     <div class="writtenbox"></div>

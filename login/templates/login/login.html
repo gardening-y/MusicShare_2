@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>로그인 화면</title>
         <link rel="stylesheet" href="{% static 'css/login_page.css' %}" />
+        <style>
+            .lo {
+                text-align: center;
+                color: rgb(201, 191, 181);
+            }
+        </style>
     </head>
     <body>
         <div class="icon">
@@ -13,30 +19,29 @@
                 <img src="{% static 'media/music-note.png' %}" alt="" />
             </div>
         </div>
+        <p class="lo"><b>로그인</b></p>
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="box">
                 <div class="email">
-                    {{ form.username.label_tag }} {{ form.username }} 
-                    {% if form.username.errors %}
+                    {{ form.username.label_tag }} {{ form.username }} {% if
+                    form.username.errors %}
                     <ul class="errorlist">
                         {% for error in form.username.errors %}
                         <li>{{ error }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
-
                 </div>
                 <div class="password">
-                    {{ form.password.label_tag }} {{ form.password }} 
-                    {% if form.password.errors %}
+                    {{ form.password.label_tag }} {{ form.password }} {% if
+                    form.password.errors %}
                     <ul class="errorlist">
                         {% for error in form.password.errors %}
                         <li>{{ error }}</li>
                         {% endfor %}
                     </ul>
                     {% endif %}
-                  
                 </div>
             </div>
             <div class="putput" style="margin-left: 45%">

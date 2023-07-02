@@ -38,14 +38,14 @@
         <div id="song">
             <div id="write_song">
                 <input type="text" name="music_title"  value="{{writing.music_title}}" class="song_title" placeholder="노래명" />
-                <input type="text" class="singer" value="{{writing.music_singer}}" placeholder="가수명" />
+                <input type="text" class="singer" name="music_singer" value="{{writing.music_singer}}" placeholder="가수명" />
                 {% if writing.image %}
                 <p style="font-size:15px">현재 : <a href="{{ writing.image.url }}">{{writing.image.name}}</a></p>
                 <p style="font-size:15px"> 변경 : <input type="file" name="image"></p>
               {% else %}
                 <input type="file" name="image">
               {% endif %}
-                <input type="button" name="music_singer" class="add_song" value="&#xf067" onclick="add_song_singer()">
+                <input type="button"  class="add_song" value="&#xf067" onclick="add_song_singer()">
             </div>
             <div id="song_list"></div>
         </div>

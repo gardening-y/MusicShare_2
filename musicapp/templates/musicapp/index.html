@@ -9,15 +9,8 @@
         <title>Document</title>
     </head>
     <body>
-        {% for writing in writings %}
-        <hr />
-        {% if writing.image %}
-        <img src="{{writing.image.url}}" />
-        {% else %}
-        <img src="http://via.placeholder.com/50x50" alt="" />
-        {% endif %} {{writing.title}}
-        -{{writing.content|truncatechars:20}}-{{writing.author}}-{{writing.datetime|
-        date:"Y년 m월 d일"}} {% endfor %} {% if request.user.is_authenticated %}
+=
+        <hr /> {% if request.user.is_authenticated %}
         <a href="{% url 'create' %}"><p>생성</p></a> {% endif %}
 
         <nav>
@@ -39,21 +32,27 @@
                 </div>
             </div>
         </nav>
-        <main>
+        {% for writing in writings %}
+        <hr />
+        <main>        
             <div class="main_show">
-                <div class="title"><h1>음악추천</h1></div>
+                <div class="title"><h1>음악추천</h1></div>{{writing.author}}
+                {% if writing.image %}
+            <img src="{{writing.image.url}}" />
+            {% else %}
+            <img src="http://via.placeholder.com/50x50" alt="" />
+            {% endif %}
 
                 <div class="write_box">
                     <div class="writtenbox_1">
                         <div class="element_1">
                             <div class="subject_1">
-                                <h3>산책할 때 듣기 좋아요~</h3>
+                                <h3>{{writing.title}}</h3>
                             </div>
 
                             <div class="box_1">
                                 <div class="written_1">
-                                    우연히 유튜브 쇼츠를 통해 알게된 노래인데
-                                    산책할 때 들으면 좋아요!
+                                    {{writing.content}}
                                 </div>
                             </div>
 
@@ -62,12 +61,15 @@
                                 <div class="singer_1">비투비</div>
                             </div>
                         </div>
+                        {{writing.datetime|date:"Y년 m월 d일"}}
                     </div>
 
                     <div class="writtenbox"></div>
                 </div>
             </div>
         </main>
+        {% endfor %}
+    
 
         <script>
             /*여기 있는 버튼을 작성페이지에 있는 버튼이랑 연결해야함*/
@@ -115,18 +117,7 @@
                 document.querySelector(".writtenbox").appendChild(writtenbox);
             });
         </script>
-        {% for writing in writings %}
-        <hr />
-        {% if writing.image %}
-        <img src="{{writing.image.url}}" />
-        {% else %}
-        <img src="http://via.placeholder.com/50x50" alt="" />
-        {% endif %} {{writing.title}}
-        -{{writing.content|truncatechars:20}}-{{writing.author}}-{{writing.datetime|
-        date:"Y년 m월 d일"}}
-        <button type="button">
-            <a href="{% url 'delete' writing.id %}">삭제</a>
-        </button>
-        {% endfor %}
+
+        
     </body>
 </html>

@@ -36,7 +36,7 @@ def update(request, id):
       writing.image.delete()
       writing.image=new_image
     writing.save()
-    return redirect('index')
+    return redirect('mypage',writing.author) 
     
 def delete(request, id):
   writing=get_object_or_404(Music, pk=id)

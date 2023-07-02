@@ -1,89 +1,48 @@
-* {
-  background-color: rgba(15, 12, 47, 1);
+body {
+  background-color: #0f0c2f;
 }
-/* 음악아이콘 */
-.icon {
-  display: flex;
-  justify-content: center;
+.container {
+  width: 960px;
   margin: 0 auto;
+}
+.nav-menu {
+  float: right;
+  padding: 40px;
+}
+
+.logout {
+  color: #ccbeb7;
+  font-size: 16px;
+}
+
+.container {
+  padding-top: 30px;
+}
+.title {
+  color: #ccbeb7;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.box {
+  width: 1000px;
+  border-radius: 10px;
+  border: 3px solid #c0b3af;
+  margin-bottom: 30px;
+}
+
+.box > div > p {
+  color: #ccbeb7;
   padding: 20px;
 }
-.circle {
+
+.box > div {
   display: flex;
-  justify-content: center;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background-color: rgba(204, 190, 183, 1);
-  position: relative;
+  justify-content: space-between;
 }
 
-.circle img {
-  width: 80px;
-  height: 80px;
-  background-color: rgba(204, 190, 183, 1);
-  top: 20px;
-  position: absolute;
-}
-
-/* id & password box */
-.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 400px;
-  height: 360px;
-  margin: 0 auto;
-  /* padding: 20px; */
-  border: solid rgba(204, 190, 183, 1) 3px;
-  border-radius: 10%;
-}
-
-.email,
-.password {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  color: rgba(204, 190, 183, 1);
-  padding: 25px 0;
-  width: 350px;
-  height: 40px;
-}
-
-.submit {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  color: rgba(204, 190, 183, 1);
-  padding: 40px 0;
-  width: 350px;
-  height: 30px;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 300px;
-  height: 30px;
-  font-size: 15px;
-  font-weight: 300;
-  color: white;
-  border: solid rgba(204, 190, 183, 1) 3px;
-}
-
-input[type="submit"] {
-  width: 60px;
-  height: 30px;
-  font-size: 15px;
-  font-weight: 300;
-  color: white;
-  border: solid rgba(204, 190, 183, 1) 3px;
-}
-
-.signup {
-  width: 60px;
-  height: 30px;
-  font-size: 15px;
-  font-weight: 300;
-  color: white;
-  border: solid rgba(204, 190, 183, 1) 3px;
+.commbtn {
+  padding-top: 30px;
+  padding-right: 20px;
 }

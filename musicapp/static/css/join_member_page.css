@@ -41,16 +41,12 @@ label {
     height: 30px;
     background-color: rgb(201, 191, 181);
 }
-.chk {
-    color: rgb(201, 191, 181);
-}
+
 label {
     font-weight: bold;
     font-size: 15pt;
 }
-span {
-    color: rgb(201, 191, 181);
-}
+
 .box2 {
     width: 500px;
     display: block;

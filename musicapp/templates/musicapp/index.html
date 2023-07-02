@@ -18,10 +18,14 @@
             <div class="nav_bar">
                 <div class="nav_button">
                     {% if request.user.is_authenticated %}
-                    <a href="{% url 'mypage' request.user %}"
-                        ><p>마이페이지</p></a
-                    >
-                    <a href="{% url 'login:logout' %}"><p>로그아웃</p></a>
+                    <div class="mypage_btn" style="margin: 10px">
+                        <a href="{% url 'mypage' request.user %}"
+                            ><p>마이페이지</p></a
+                        >
+                    </div>
+                    <div class="logout_btn" style="margin: 10px">
+                        <a href="{% url 'login:logout' %}"><p>로그아웃</p></a>
+                    </div>
                     {% else %}
                     <div class="login_button">
                         <a href="{% url 'login:login' %}"> 로그인</a>

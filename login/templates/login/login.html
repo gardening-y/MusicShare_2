@@ -35,8 +35,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
-                {{ form.username.label_tag }} {{ form.username }} {% if
-                form.username.errors %}
+                {{ form.username.label_tag }} {{ form.username }} {% if form.username.errors %}
                 <ul class="errorlist">
                     {% for error in form.username.errors %}
                     <li>{{ error }}</li>
@@ -45,8 +44,7 @@
                 {% if form.password.errors %}
             </div>
             <div>
-                {{ form.password.label_tag }} {{ form.password }} {% if
-                form.password.errors %}
+                {{ form.password.label_tag }} {{ form.password }} {% if form.password.errors %}
                 <ul class="errorlist">
                     {% for error in form.password.errors %}
                     <li>{{ error }}</li>

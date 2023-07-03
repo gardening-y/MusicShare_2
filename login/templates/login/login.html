@@ -1,91 +1,64 @@
 <!DOCTYPE html>
-{}
-<html lang="ko">
+{% load static %}
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>로그인 화면</title>
+        <link rel="stylesheet" href="{% static 'css/login_page.css' %}" />
+        <style>
+            *{
+                color: rgba(204, 190, 183, 1);
+            }
+        </style>
     </head>
     <body>
-        <h1>로그인 화면</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div>
-            {{ form.username.label_tag }} {{ form.username }} {% if form.username.errors %}
-        <link
-            rel="stylesheet"
-            href="{% static '/login/static/css/login_page.css' %}"
-        />
-        <link rel="stylesheet" href="/login/static/css/login_page.css" />
-    </head>
-    <body>
-        <!-- 음악아이콘 -->
         <div class="icon">
             <div class="circle">
-                <img src="/login/templates/login/music-note.png" alt="" />
+                <img src="{% static 'media/music-note.png' %}" alt="" />
             </div>
         </div>
-
-        <!-- id & password box -->
-        <div class="box">
-            <div class="email">
-                <input type="email" name="email" placeholder="ID" />
-            </div>
-            <div class="password">
-                <input type="password" name="password" placeholder="Password" />
-            </div>
-            <div class="submit">
-                <input type="submit" name="submit" value="Login" />
-            </div>
-        </div>
-
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div>
+            <div class="box">
+                <div class="email">
+                    {{ form.username.label_tag }} {{ form.username }} 
+                    {% if form.username.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
 
-                {{ form.username.label_tag }} {{ form.username }} {% if form.username.errors %}
-
-                {{ form.username.label_tag }} {{ form.username }} {% if form.username.errors %}
-
-                <ul class="errorlist">
-                    {% for error in form.username.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-
-                {% endif %}
+                </div>
+                <div class="password">
+                    {{ form.password.label_tag }} {{ form.password }} 
+                    {% if form.password.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                  
+                </div>
             </div>
-            <div>
-                {{ form.password.label_tag }} {{ form.password }} 
-                {% if
-                form.password.errors %}
-
-                {% if form.password.errors %}
-            </div>
-            <div>
-
-                {{ form.password.label_tag }} {{ form.password }} {% if form.password.errors %}
-
-
-                {{ form.password.label_tag }} {{ form.password }} {% if form.password.errors %}
-
-                <ul class="errorlist">
-                    {% for error in form.password.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-            <div>
-                <input type="submit" value="로그인" />
+            <div class="putput" style="margin-left: 45%">
+                <div style="margin: 10px">
+                    <input type="submit" value="Login" />
+                </div>
+                <div class="signup" style="margin: 10px">
+                    <a
+                        href="{% url 'login:signup' %}"
+                        style="
+                            color: rgba(204, 190, 183, 1);
+                            text-decoration-line: none;
+                        "
+                        >회원가입</a
+                    >
+                </div>
             </div>
         </form>
-
-        <a href="{% url 'login:signup' %}">회원가입</a>
-
-        <div class="signup">
-            <a href="{% url 'login:signup' %}">회원가입</a>
-        </div>
-
     </body>
 </html>
